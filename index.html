@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f4">
+  <meta name="description" content="디자인과 기술의 접점을 탐구하는 황인영의 개인 프로필입니다.">
+  <title>황인영 | 개인 프로필</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202b27;
+      --muted: #68746d;
+      --paper: #f7f8f4;
+      --line: #e2e8df;
+      --green: #2c715b;
+      --green-dark: #205943;
+      --lime: #d7ed9f;
+      --white: #fff;
+      font-family: "DM Sans", "Noto Sans KR", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 86% 9%, rgba(215, 237, 159, .28), transparent 28rem),
+        linear-gradient(180deg, #fbfcf9 0%, var(--paper) 62%);
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 3px solid #9dbf51;
+      outline-offset: 4px;
+      border-radius: 3px;
+    }
+
+    .page-shell {
+      width: min(100% - 64px, 1080px);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(32, 43, 39, .09);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      width: 34px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+
+    .site-nav { display: flex; align-items: center; gap: 31px; }
+
+    .site-nav a {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color .18s ease;
+    }
+
+    .site-nav a:hover { color: var(--green); }
+
+    main { padding-block: 74px 68px; }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(270px, .82fr) minmax(0, 1.18fr);
+      align-items: center;
+      gap: clamp(44px, 8vw, 106px);
+    }
+
+    .portrait-wrap {
+      position: relative;
+      max-width: 370px;
+      justify-self: center;
+      width: 100%;
+      animation: rise-in .7s ease both;
+    }
+
+    .portrait-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 18px -15px -15px 18px;
+      border: 1px solid #b9cbb8;
+      border-radius: 3px;
+    }
+
+    .portrait {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 4.65;
+      object-fit: cover;
+      object-position: center 38%;
+      border-radius: 3px;
+      background: #dce5da;
+    }
+
+    .portrait-note {
+      position: absolute;
+      right: -24px;
+      bottom: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 14px;
+      background: var(--white);
+      box-shadow: 0 8px 26px rgba(32, 43, 39, .09);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 8px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #7aa640;
+      box-shadow: 0 0 0 3px #edf5df;
+    }
+
+    .intro-copy { animation: rise-in .7s .12s ease both; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 19px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      max-width: 600px;
+      margin: 0;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.28;
+      font-weight: 600;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+
+    h1 span { color: var(--green); }
+
+    .lead {
+      max-width: 510px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+      word-break: keep-all;
+    }
+
+    .divider { height: 1px; margin-block: 34px 25px; background: var(--line); }
+
+    .details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 23px 30px;
+    }
+
+    .detail-label {
+      display: block;
+      margin-bottom: 8px;
+      color: #87918a;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .detail-value { margin: 0; font-size: 14px; font-weight: 600; }
+
+    .detail-value a {
+      text-decoration-color: #b6c8b7;
+      text-underline-offset: 4px;
+    }
+
+    .interests {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: clamp(44px, 8vw, 106px);
+      margin-top: 89px;
+      padding-top: 29px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .section-kicker {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .interest-list { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .interest {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 39px;
+      padding: 0 13px;
+      border: 1px solid #dfe7dc;
+      background: rgba(255, 255, 255, .72);
+      color: #435149;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .interest::before {
+      content: "";
+      width: 5px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #85a86b;
+    }
+
+    .site-footer {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid rgba(32, 43, 39, .09);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-note { margin: 0; }
+    .footer-mark { color: var(--green); font-weight: 700; }
+
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .page-shell { width: min(100% - 40px, 520px); }
+      .site-header { min-height: 72px; }
+      .site-nav { gap: 18px; }
+      .site-nav a { font-size: 12px; }
+      main { padding-block: 48px 52px; }
+      .intro { grid-template-columns: 1fr; gap: 46px; }
+      .portrait-wrap { width: min(74%, 310px); }
+      .intro-copy { text-align: center; }
+      .eyebrow { justify-content: center; }
+      h1 { margin-inline: auto; font-size: clamp(32px, 8vw, 43px); }
+      .lead { margin-inline: auto; font-size: 14px; }
+      .details { text-align: left; }
+      .interests { grid-template-columns: 1fr; gap: 20px; margin-top: 67px; }
+      .site-footer { min-height: 72px; }
+    }
+
+    @media (max-width: 390px) {
+      .page-shell { width: min(100% - 32px, 520px); }
+      .brand { gap: 8px; font-size: 13px; }
+      .brand-mark { width: 31px; border-radius: 9px; }
+      .site-nav { gap: 12px; }
+      .site-nav a { font-size: 11px; }
+      .details { gap: 20px 14px; }
+      .detail-value { font-size: 12px; }
+      .portrait-note { right: -12px; font-size: 11px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">본문으로 건너뛰기</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="황인영 프로필 첫 화면">
+        <span class="brand-mark" aria-hidden="true">HK</span>
+        <span>황인영</span>
+      </a>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <a href="#about">소개</a>
+        <a href="#interests">관심 분야</a>
+        <a href="#contact">연락하기</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="intro" id="top" aria-labelledby="page-title">
+        <div class="portrait-wrap">
+          <img
+            class="portrait"
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
+            alt="자연광 아래 미소 짓는 황인영의 프로필 사진"
+            fetchpriority="high"
+          >
+          <div class="portrait-note"><span class="status-dot" aria-hidden="true"></span>새로운 만남을 환영해요</div>
+        </div>
+
+        <div class="intro-copy" id="about">
+          <p class="eyebrow">A LITTLE ABOUT ME</p>
+          <h1 id="page-title">안녕하세요,<br><span>황인영</span>입니다.</h1>
+          <p class="lead">좋은 질문에서 더 나은 경험이 시작된다고 믿어요. 사람들의 일상을 세심하게 살피고, 디자인과 기술로 작지만 의미 있는 변화를 만들어 갑니다.</p>
+
+          <div class="divider"></div>
+          <div class="details">
+            <div>
+              <span class="detail-label">Currently</span>
+              <p class="detail-value">디지털 제품 기획 · 서울</p>
+            </div>
+            <div id="contact">
+              <span class="detail-label">Say hello</span>
+              <p class="detail-value"><a href="mailto:tlrgud16@naver.com">tlrgud16@naver.com</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="interests" id="interests" aria-labelledby="interests-title">
+        <div>
+          <h2 class="section-heading" id="interests-title">요즘 관심 있는 것</h2>
+          <p class="section-kicker">Curious about these days</p>
+        </div>
+        <div class="interest-list" aria-label="관심 분야 목록">
+          <span class="interest">사용자 경험 디자인</span>
+          <span class="interest">지속 가능한 라이프스타일</span>
+          <span class="interest">독립 출판</span>
+          <span class="interest">도시 산책과 사진</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-note">천천히, 오래 기억될 것을 만듭니다.</p>
+      <span class="footer-mark">SEOUL, KR</span>
+    </footer>
+  </div>
+</body>
+</html>
